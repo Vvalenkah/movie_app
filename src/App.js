@@ -27,11 +27,10 @@ class App extends React.Component {
             <span className='loader__text'>
                 Загрузка...
             </span>
-        </div> :
-        movies.map(movie => {
-            console.log(movie);
-            return <div className='movies'>
-                <Movie
+        </div> : (
+        <div className="movies">
+        {movies.map((movie) => (
+          <Movie
             key={movie.id}
             id={movie.id}
             year={movie.year}
@@ -39,10 +38,11 @@ class App extends React.Component {
             summary={movie.summary}
             cover={movie.medium_cover_image}
             genres={movie.genres}
-            />
-            </div>
-        })}
-        </section>
+          />
+        ))}
+      </div>
+    )}
+  </section>
     }
-}
+        }
     export default App;
